@@ -1,0 +1,267 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000070cc5da5, pid=3476, tid=0x00000000000029e4
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_141-b15) (build 1.8.0_141-b15)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.141-b15 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x125da5]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000001ec57800):  JavaThread "TestRunner thread" daemon [_thread_in_vm, id=10724, stack(0x000000001f870000,0x000000001f970000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000004ce3b0cf0
+
+Registers:
+RAX=0x00004486ac5e893b, RBX=0x000000001eb8cbe0, RCX=0x00000004ce3b0ce8, RDX=0x000000076c59a190
+RSP=0x000000001f96dae0, RBP=0x00000000000003d8, RSI=0x000000001e986e90, RDI=0x000000001ec57800
+R8 =0x000000076c59a1c8, R9 =0x0000000000000000, R10=0x000000007139f240, R11=0x00000000031c8f40
+R12=0x000000001e986ea0, R13=0x000000001e987278, R14=0x000000001f96de58, R15=0x000000001ec57800
+RIP=0x0000000070cc5da5, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x000000001f96dae0)
+0x000000001f96dae0:   00004486ac5e8a6b 00000000fffffffe
+0x000000001f96daf0:   000000001c1081b0 0000000070dd6fad
+0x000000001f96db00:   000000001f96dc70 000000001ec57800
+0x000000001f96db10:   000000001c1081b0 000000001ec57800
+0x000000001f96db20:   000000001f96dda0 00004486ac5e893b
+0x000000001f96db30:   000000001eb8cbe0 0000000070fea61b
+0x000000001f96db40:   000000001f96dc40 0000000070c63467
+0x000000001f96db50:   000000001c1081b0 000000001ec57800
+0x000000001f96db60:   000000001f96dde8 0000000000000000
+0x000000001f96db70:   00000004ce3b0ce8 00000000030cc3aa
+0x000000001f96db80:   000000001ec57800 000000001c453228
+0x000000001f96db90:   000000001f96dd70 000000076c59a190
+0x000000001f96dba0:   000000001c1081b0 0000000000000000
+0x000000001f96dbb0:   0000000000000000 0000000000000000
+0x000000001f96dbc0:   0000000000000000 0000000000000000
+0x000000001f96dbd0:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x0000000070cc5da5)
+0x0000000070cc5d85:   00 00 48 8b 00 c3 cc cc cc cc cc 40 53 48 83 ec
+0x0000000070cc5d95:   50 48 8b 05 23 67 6c 00 48 33 c4 48 89 44 24 48
+0x0000000070cc5da5:   83 79 08 00 48 8b d9 0f 8e b9 00 00 00 0f b6 81
+0x0000000070cc5db5:   0e 01 00 00 c0 e8 03 a8 01 0f 84 a7 00 00 00 48 
+
+
+Register to memory mapping:
+
+RAX=0x00004486ac5e893b is an unknown value
+RBX=0x000000001eb8cbe0 is an unknown value
+RCX=0x00000004ce3b0ce8 is an unknown value
+RDX=0x000000076c59a190 is an oop
+
+[error occurred during error reporting (printing register info), id 0xc0000005]
+
+Stack: [0x000000001f870000,0x000000001f970000],  sp=0x000000001f96dae0,  free space=1014k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x125da5]
+V  [jvm.dll+0x44a61b]
+C  0x00000000030cc3aa
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  ~RuntimeStub::throw_class_cast_exception Runtime1 stub
+J 367 C1 java.lang.Class.reflectionData()Ljava/lang/Class$ReflectionData; (49 bytes) @ 0x00000000031c934b [0x00000000031c8f20+0x42b]
+j  java.lang.Class.privateGetDeclaredFields(Z)[Ljava/lang/reflect/Field;+4
+j  java.lang.Class.getDeclaredFields()[Ljava/lang/reflect/Field;+11
+j  org.powermock.reflect.internal.WhiteboxImpl.getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;+49
+j  org.powermock.reflect.Whitebox.getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;+2
+j  org.powermock.classloading.DeepCloner.cloneFields(Ljava/lang/ClassLoader;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Map;Z)V+67
+j  org.powermock.classloading.DeepCloner.performClone(Ljava/lang/Class;Ljava/lang/Object;Z)Ljava/lang/Object;+168
+j  org.powermock.classloading.DeepCloner.cloneFields(Ljava/lang/ClassLoader;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Map;Z)V+214
+j  org.powermock.classloading.DeepCloner.performClone(Ljava/lang/Class;Ljava/lang/Object;Z)Ljava/lang/Object;+168
+j  org.powermock.classloading.DeepCloner.cloneFields(Ljava/lang/ClassLoader;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Map;Z)V+214
+j  org.powermock.classloading.DeepCloner.performClone(Ljava/lang/Class;Ljava/lang/Object;Z)Ljava/lang/Object;+168
+j  org.powermock.classloading.DeepCloner.cloneFields(Ljava/lang/ClassLoader;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Map;Z)V+214
+j  org.powermock.classloading.DeepCloner.performClone(Ljava/lang/Class;Ljava/lang/Object;Z)Ljava/lang/Object;+168
+j  org.powermock.classloading.DeepCloner.cloneFields(Ljava/lang/ClassLoader;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Map;Z)V+214
+j  org.powermock.classloading.DeepCloner.performClone(Ljava/lang/Class;Ljava/lang/Object;Z)Ljava/lang/Object;+168
+j  org.powermock.classloading.DeepCloner.clone(Ljava/lang/Object;Z)Ljava/lang/Object;+18
+j  org.powermock.classloading.DeepCloner.clone(Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.powermock.classloading.ClassloaderExecutor.execute(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+13
+j  org.powermock.classloading.ClassloaderExecutor.execute(Ljava/lang/Runnable;)V+26
+j  org.powermock.modules.junit4.rule.PowerMockStatement.evaluate()V+12
+j  org.junit.runners.ParentRunner.runLeaf(Lorg/junit/runners/model/Statement;Lorg/junit/runner/Description;Lorg/junit/runner/notification/RunNotifier;)V+17
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Lorg/junit/runners/model/FrameworkMethod;Lorg/junit/runner/notification/RunNotifier;)V+32
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Ljava/lang/Object;Lorg/junit/runner/notification/RunNotifier;)V+6
+j  org.junit.runners.ParentRunner$3.run()V+12
+j  org.junit.runners.ParentRunner$1.schedule(Ljava/lang/Runnable;)V+1
+j  org.junit.runners.ParentRunner.runChildren(Lorg/junit/runner/notification/RunNotifier;)V+40
+j  org.junit.runners.ParentRunner.access$000(Lorg/junit/runners/ParentRunner;Lorg/junit/runner/notification/RunNotifier;)V+2
+j  org.junit.runners.ParentRunner$2.evaluate()V+8
+j  org.junit.internal.runners.statements.RunBefores.evaluate()V+49
+j  org.junit.internal.runners.statements.RunAfters.evaluate()V+12
+j  org.junit.runners.ParentRunner.run(Lorg/junit/runner/notification/RunNotifier;)V+20
+j  fi.helsinki.cs.tmc.testrunner.TestRunner$TestingRunnable.runTestCase(Lfi/helsinki/cs/tmc/testrunner/TestCase;)V+62
+j  fi.helsinki.cs.tmc.testrunner.TestRunner$TestingRunnable.doRun()V+68
+j  fi.helsinki.cs.tmc.testrunner.TestRunner$TestingRunnable.run()V+1
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x000000001ec57800 JavaThread "TestRunner thread" daemon [_thread_in_vm, id=10724, stack(0x000000001f870000,0x000000001f970000)]
+  0x000000001ea19000 JavaThread "Service Thread" daemon [_thread_blocked, id=8760, stack(0x000000001f540000,0x000000001f640000)]
+  0x000000001e989000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=5112, stack(0x000000001f440000,0x000000001f540000)]
+  0x000000001e984000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=11032, stack(0x000000001f340000,0x000000001f440000)]
+  0x000000001e97f000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=4696, stack(0x000000001f240000,0x000000001f340000)]
+  0x000000001e97c000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=1648, stack(0x000000001f140000,0x000000001f240000)]
+  0x000000001e97b000 JavaThread "Attach Listener" daemon [_thread_blocked, id=10820, stack(0x000000001f040000,0x000000001f140000)]
+  0x000000001ca8e000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=740, stack(0x000000001ef40000,0x000000001f040000)]
+  0x000000001e970800 JavaThread "Finalizer" daemon [_thread_blocked, id=9324, stack(0x000000001ed50000,0x000000001ee50000)]
+  0x0000000002fc9000 JavaThread "Reference Handler" daemon [_thread_blocked, id=7464, stack(0x000000001e850000,0x000000001e950000)]
+  0x0000000002dce800 JavaThread "main" [_thread_blocked, id=4664, stack(0x0000000002dd0000,0x0000000002ed0000)]
+
+Other Threads:
+  0x000000001ca7a000 VMThread [stack: 0x000000001e750000,0x000000001e850000] [id=12136]
+  0x000000001ea25800 WatcherThread [stack: 0x000000001f770000,0x000000001f870000] [id=9712]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 76288K, used 23619K [0x000000076af00000, 0x0000000770400000, 0x00000007c0000000)
+  eden space 65536K, 36% used [0x000000076af00000,0x000000076c610ea8,0x000000076ef00000)
+  from space 10752K, 0% used [0x000000076f980000,0x000000076f980000,0x0000000770400000)
+  to   space 10752K, 0% used [0x000000076ef00000,0x000000076ef00000,0x000000076f980000)
+ ParOldGen       total 175104K, used 0K [0x00000006c0c00000, 0x00000006cb700000, 0x000000076af00000)
+  object space 175104K, 0% used [0x00000006c0c00000,0x00000006c0c00000,0x00000006cb700000)
+ Metaspace       used 7315K, capacity 7592K, committed 7680K, reserved 1056768K
+  class space    used 835K, capacity 945K, committed 1024K, reserved 1048576K
+
+Card table byte_map: [0x0000000012390000,0x0000000012b90000] byte_map_base: 0x000000000ed8a000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000713bd850
+ Begin Bits: [0x00000000138f0000, 0x00000000178c0000)
+ End Bits:   [0x00000000178c0000, 0x000000001b890000)
+
+Polling page: 0x0000000001480000
+
+CodeCache: size=245760Kb used=3228Kb max_used=3253Kb free=242531Kb
+ bounds [0x0000000002fd0000, 0x0000000003300000, 0x0000000011fd0000]
+ total_blobs=1089 nmethods=789 adapters=213
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.618 Thread 0x000000001e989000  785       3       jdk.internal.org.objectweb.asm.ByteVector::putByteArray (49 bytes)
+Event: 0.618 Thread 0x000000001e989000 nmethod 785 0x00000000032e9b50 code [0x00000000032e9cc0, 0x00000000032e9ff8]
+Event: 0.619 Thread 0x000000001e989000  786       3       jdk.internal.org.objectweb.asm.ByteVector::enlarge (51 bytes)
+Event: 0.619 Thread 0x000000001e989000 nmethod 786 0x00000000032e95d0 code [0x00000000032e9740, 0x00000000032e9a68]
+Event: 0.620 Thread 0x000000001e989000  787       3       java.lang.invoke.LambdaForm$BasicType::basicType (172 bytes)
+Event: 0.621 Thread 0x000000001e989000 nmethod 787 0x00000000032eb050 code [0x00000000032eb2a0, 0x00000000032ec0b8]
+Event: 0.621 Thread 0x000000001e989000  788       3       java.lang.invoke.MethodType$ConcurrentWeakInternSet::get (54 bytes)
+Event: 0.622 Thread 0x000000001e989000 nmethod 788 0x00000000032ec7d0 code [0x00000000032eca00, 0x00000000032ed6d8]
+Event: 0.622 Thread 0x000000001e989000  789       3       java.util.zip.ZipFile$ZipFileInflaterInputStream::<init> (29 bytes)
+Event: 0.622 Thread 0x000000001e989000 nmethod 789 0x00000000032e9190 code [0x00000000032e9300, 0x00000000032e9508]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (5 events):
+Event: 0.186 Thread 0x000000001ec57800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003135a14 method=java.lang.String.indexOf([CII[CIII)I @ 123
+Event: 0.256 Thread 0x000000001ec57800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000317ce6c method=java.lang.String.indexOf([CII[CIII)I @ 134
+Event: 0.468 Thread 0x000000001ec57800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000317b698 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 84
+Event: 0.468 Thread 0x000000001ec57800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000031725e8 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 84
+Event: 0.554 Thread 0x000000001ec57800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000310c8c0 method=java.lang.CharacterData.of(I)Ljava/lang/CharacterData; @ 4
+
+Internal exceptions (9 events):
+Event: 0.032 Thread 0x0000000002dce800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x000000076af07ca8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u141\9370\hotspot\
+Event: 0.032 Thread 0x0000000002dce800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x000000076af07f90) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u141\9370\hotspot\src\share\vm\prims
+Event: 0.076 Thread 0x0000000002dce800 Exception <a 'java/io/FileNotFoundException'> (0x000000076af738b0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u141\9370\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 0.189 Thread 0x000000001ec57800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076b49a1b0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u141\9370\hotspot\src\share\vm\prims\jvm.cpp, line 1390]
+Event: 0.189 Thread 0x000000001ec57800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076b49a5a8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u141\9370\hotspot\src\share\vm\prims\jvm.cpp, line 1390]
+Event: 0.195 Thread 0x000000001ec57800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076b49e5e8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u141\9370\hotspot\src\share\vm\prims\jvm.cpp, line 1390]
+Event: 0.195 Thread 0x000000001ec57800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076b49e9e0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u141\9370\hotspot\src\share\vm\prims\jvm.cpp, line 1390]
+Event: 0.368 Thread 0x000000001ec57800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000076bca95c8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u141\9370\hotspot\src\share\vm\prims\methodHandles.cpp, line 1146]
+Event: 0.369 Thread 0x000000001ec57800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000076bcb7088) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u141\9370\hotspot\src\share\vm\prims\methodHandles.cpp, line 1146]
+
+Events (10 events):
+Event: 0.620 loading class java/io/ObjectInputStream$ValidationList
+Event: 0.620 loading class java/io/ObjectInputStream$ValidationList done
+Event: 0.620 loading class sun/misc/ObjectInputFilter$Config
+Event: 0.620 loading class sun/misc/ObjectInputFilter$Config done
+Event: 0.620 loading class sun/misc/ObjectInputFilter
+Event: 0.620 loading class sun/misc/ObjectInputFilter done
+Event: 0.621 loading class org/powermock/classloading/DeepCloner$UnsafeFieldWriter
+Event: 0.621 loading class org/powermock/classloading/DeepCloner$UnsafeFieldWriter done
+Event: 0.622 loading class sun/reflect/UnsafeQualifiedStaticObjectFieldAccessorImpl
+Event: 0.622 loading class sun/reflect/UnsafeQualifiedStaticObjectFieldAccessorImpl done
+
+
+Dynamic libraries:
+0x00007ff776830000 - 0x00007ff776867000 	C:\ProgramData\Oracle\Java\javapath\java.exe
+0x00007ffe2d910000 - 0x00007ffe2daeb000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffe2d620000 - 0x00007ffe2d6ce000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffe2a1b0000 - 0x00007ffe2a3f9000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffe2d140000 - 0x00007ffe2d1e1000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffe2ae70000 - 0x00007ffe2af0d000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffe2b180000 - 0x00007ffe2b1d9000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffe2aff0000 - 0x00007ffe2b115000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffe2b290000 - 0x00007ffe2b3da000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffe2a190000 - 0x00007ffe2a1ae000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffe2d2c0000 - 0x00007ffe2d2e7000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffe29e90000 - 0x00007ffe2a017000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffe2ab00000 - 0x00007ffe2ab9a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffe2aba0000 - 0x00007ffe2ac96000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffe1e0c0000 - 0x00007ffe1e327000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.15063.483_none_26002d27e7c744a2\COMCTL32.dll
+0x00007ffe2d320000 - 0x00007ffe2d619000 	C:\WINDOWS\System32\combase.dll
+0x00007ffe2a120000 - 0x00007ffe2a18a000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffe2d2f0000 - 0x00007ffe2d31d000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000071440000 - 0x0000000071512000 	C:\Program Files\Java\jre1.8.0_141\bin\msvcr100.dll
+0x0000000070ba0000 - 0x000000007143d000 	C:\Program Files\Java\jre1.8.0_141\bin\server\jvm.dll
+0x00007ffe2d790000 - 0x00007ffe2d798000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffe22a80000 - 0x00007ffe22a8a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffe1c0b0000 - 0x00007ffe1c0b9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffe22580000 - 0x00007ffe225a3000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffe2d1f0000 - 0x00007ffe2d25c000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffe22550000 - 0x00007ffe2257b000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffe2a020000 - 0x00007ffe2a069000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x0000000074570000 - 0x000000007457f000 	C:\Program Files\Java\jre1.8.0_141\bin\verify.dll
+0x0000000070b70000 - 0x0000000070b99000 	C:\Program Files\Java\jre1.8.0_141\bin\java.dll
+0x0000000070b50000 - 0x0000000070b66000 	C:\Program Files\Java\jre1.8.0_141\bin\zip.dll
+0x00007ffe2b3e0000 - 0x00007ffe2c816000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffe2cc90000 - 0x00007ffe2cd3a000 	C:\WINDOWS\System32\shcore.dll
+0x00007ffe2a400000 - 0x00007ffe2aaf1000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007ffe2af90000 - 0x00007ffe2afe1000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ffe29df0000 - 0x00007ffe29e01000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ffe29da0000 - 0x00007ffe29dec000 	C:\WINDOWS\System32\powrprof.dll
+0x00007ffe29d80000 - 0x00007ffe29d95000 	C:\WINDOWS\System32\profapi.dll
+0x00007ffe25330000 - 0x00007ffe254d9000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dtmc.test_class_dir=C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\test -Dtmc.results_file=C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\results.txt 
+java_command: fi.helsinki.cs.tmc.testrunner.Main AverageOfGivenNumbersTest.averageRight1{46} AverageOfGivenNumbersTest.averageRight2{46} AverageOfGivenNumbersTest.helperMethodUsed1{46} AverageOfGivenNumbersTest.testSum{46} AverageOfGivenNumbersTest.testAverage{46} AverageOfGivenNumbersTest.testMain{46}
+java_class_path (initial): C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\cglib-nodep-2.2.2.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\easymock-3.2.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\edu-test-utils-0.4.2.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\hamcrest-core-1.3.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\javassist-3.18.2-GA.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\junit-4.11.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\objenesis-2.1.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\powermock-classloading-base-1.5.5.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\powermock-classloading-objenesis-1.5.5.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\powermock-easymock-1.5.5-full.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\powermock-module-junit4-rule-1.5.5.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\testrunner;C:\Users\henni niemi\Documents\NetBeansProjects\aalto-biz-2017-prog-1\week3-046.AverageOfGivenNumbers\lib\testrunner\gson-2.2.4.jar;C:\Users\henni niemi\Documents\NetBeansProjects\aal
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\IBM\SPSS\Statistics\23\JRE\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_141;
+USERNAME=henni niemi
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 15063 (10.0.15063.296)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 16722200k(10685180k free), swap 19212568k(12124268k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.141-b15) for windows-amd64 JRE (1.8.0_141-b15), built on Jul 12 2017 04:25:12 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sat Oct 14 11:51:03 2017
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
