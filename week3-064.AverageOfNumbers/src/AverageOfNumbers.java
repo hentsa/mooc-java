@@ -4,14 +4,21 @@ import java.util.ArrayList;
 public class AverageOfNumbers {
 
     // Copy here the method sum from previous assignment
-    public static int sum(ArrayList<Integer> list) {
-        return 0;
+    public static double sum(ArrayList<Integer> list) {
+        double summa = 0;
+        
+        
+        for (double a : list) {
+            summa = summa +a;
+        }
+        return summa;
     }
     
 
     public static double average(ArrayList<Integer> list) {
-        // write code here
-        return 0;
+        int size = list.size();
+        double average =sum(list)/size; 
+        return average;
     }
 
     public static void main(String[] args) {

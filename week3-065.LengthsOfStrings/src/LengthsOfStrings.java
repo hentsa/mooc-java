@@ -1,9 +1,14 @@
 import java.util.ArrayList;
 
 public class LengthsOfStrings {
-    public static ArrayList<Integer> lengths(ArrayList<String> list) {
+    public static ArrayList<Integer> lengths(ArrayList<String> ville) {
         ArrayList<Integer> lengthList = new ArrayList<Integer>();
-        // write code here
+        
+       for (String jee : ville) {
+        int length = jee.length();
+        lengthList.add(length);
+        
+       }
         
         return lengthList;
     }
